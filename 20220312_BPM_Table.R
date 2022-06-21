@@ -1,9 +1,6 @@
 library(nbastatR)
 library(dplyr)
 
-library(nbastatR)
-
-
 s_bpm_tab <- function(team) {
   #filter for team and then get totals for min, pts, fga, etc
   d1 <- TeamStats2021 %>%
@@ -326,10 +323,3 @@ test1 <- test %>%
   #filter(namePlayer == 'James Harden') #%>%
   arrange(desc(MP))
 
-confused <- PlayerStats2021 %>%
-  filter(namePlayer == 'Tyrese Haliburton') 
-confused <- head(confused)
-confused <- unique(confused)
-
-confused2 <- Player_Positions2021 %>%
-  filter(namePlayer == 'Tyrese Haliburton')
