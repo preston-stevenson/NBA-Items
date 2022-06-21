@@ -1,13 +1,13 @@
+library(dplyr)
 
 
-
-PlayersAdvanced21 <- PlayerStats2021 %>%
+PlayersAggregate21 <- PlayerStats2021 %>%
   select(!c(idTeam, fg2m, fg2a, pctFG2)) %>%
   group_by(namePlayer, slugTeam) %>%
   summarize(pts = mean(pts), asts = mean(ast), reb = mean(treb), stl = mean(stl), blk = mean(blk),
             plusminus = mean(plusminus), pctFG = mean(pctFG), pct3FG = mean(pctFG3), mins = mean(minExact))
 
-TeamsAdvanced21 <- TeamStats2021 %>%
+TeamsAggregate21 <- TeamStats2021 %>%
   select(!c(idTeam, fg2m, fg2a, pctFG2)) %>%
   group_by(slugTeam) %>%
   summarize(pts = mean(pts), asts = mean(ast), reb = mean(treb), stl = mean(stl), blk = mean(blk),
